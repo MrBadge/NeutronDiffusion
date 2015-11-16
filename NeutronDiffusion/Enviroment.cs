@@ -11,6 +11,7 @@ namespace NeutronDiffusion
 		public double SigmaS { get; set; }
 		public double SigmaA { get; set; }
 		public double CosFi { get; set; }
+        public double SigmaTr { get; set; }
 		public int NeutronNums { get; set; }
 
 		private List<Neutron> neutrons = new List<Neutron>();
@@ -20,6 +21,7 @@ namespace NeutronDiffusion
 			this.SigmaS = SigmaS;
 			this.SigmaA = SigmaA;
 			this.CosFi = CosFi;
+		    this.SigmaTr = SigmaA + SigmaS*(1 - CosFi);
 		}
 
 		public static void Main2()
@@ -32,7 +34,7 @@ namespace NeutronDiffusion
 		public void StartSimulation()
 		{
 			for (int i = 0; i < NeutronNums; i++)
-				neutrons.Add(new Neutron(new CustomPoint3D(), SigmaA, SigmaS, CosFi));
+				neutrons.Add(new Neutron(new CustomPoint3D(), SigmaA, SigmaTr));
 			neutrons.ForEach(neutron => neutron.Move());
 			Console.WriteLine("HERE");
 		}

@@ -16,16 +16,12 @@ namespace NeutronDiffusion
         private bool isAbsorbed { get; set; }
 
         private const double TWO_PI = Math.PI*2;
-        private double _sigmaA, _sigmaS, _diffusionCos;
-        private readonly double _sigmaTr;
-        
+        private double _sigmaA, _sigmaTr;        
 
-        public Neutron(CustomPoint3D startPoint, double sigmaA, double sigmaS, double diffusionCos)
+        public Neutron(CustomPoint3D startPoint, double sigmaA, double sigmaTr)
         {
             this._sigmaA = sigmaA;
-            this._sigmaS = sigmaS;
-            this._diffusionCos = diffusionCos;
-            this._sigmaTr = this._sigmaA + this._sigmaS*(1 - this._diffusionCos);
+            this._sigmaTr = sigmaTr;
             this.AverageFreePathLength = 0;
 
             this.isAbsorbed = false;
