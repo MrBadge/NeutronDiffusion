@@ -9,10 +9,10 @@ namespace NeutronDiffusion
     class Neutron
     {
         readonly Random _r = new Random();
-        private List<double> FreePathLength { get; set; }
+        public List<double> FreePathLength { get; set; }
         private List<Vector3D> GuidedCos { get; set; }
-        private List<CustomPoint3D> CollisionPoint { get; set; }
-        private double AverageFreePathLength { get; set; }
+        public List<CustomPoint3D> CollisionPoint { get; set; }
+        public double AverageFreePathLength { get; set; }
         private bool isAbsorbed { get; set; }
 
         private const double TWO_PI = Math.PI*2;
