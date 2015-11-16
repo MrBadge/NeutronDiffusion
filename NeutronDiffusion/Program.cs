@@ -12,7 +12,7 @@ namespace NeutronDiffusion
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main2()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Media.Media3D;
 
 namespace NeutronDiffusion
@@ -16,7 +17,7 @@ namespace NeutronDiffusion
         private bool isAbsorbed { get; set; }
 
         private const double TWO_PI = Math.PI*2;
-        private double _sigmaA, _sigmaTr;        
+        private double _sigmaA, _sigmaTr;
 
         public Neutron(CustomPoint3D startPoint, double sigmaA, double sigmaTr)
         {

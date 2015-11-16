@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NeutronDiffusion
 {
@@ -24,10 +22,11 @@ namespace NeutronDiffusion
 		    this.SigmaTr = SigmaA + SigmaS*(1 - CosFi);
 		}
 
-		public static void Main2()
+		public static void Main()
 		{
 			Enviroment env = new Enviroment(2, 2, 0.1);
-			env.NeutronNums = 2;
+			env.NeutronNums = 20000;
+            Console.WriteLine("Launching {0} neutrons...", env.NeutronNums);
 			env.StartSimulation();
 		}
 
@@ -35,8 +34,9 @@ namespace NeutronDiffusion
 		{
 			for (int i = 0; i < NeutronNums; i++)
 				neutrons.Add(new Neutron(new CustomPoint3D(), SigmaA, SigmaTr));
-			neutrons.ForEach(neutron => neutron.Move());
-			Console.WriteLine("HERE");
+            var threads = new NeutronThreadsWrapper(neutrons);
+            threads.LaunchCalculations();
+            Console.WriteLine("MeanFreePathBeforeAbsorption: {0}", MeanFreePathBeforeAbsorption());
 		}
 
 		private double MeanFreePathBeforeAbsorption()
