@@ -8,9 +8,9 @@ namespace NeutronDiffusion
 {
 	class Enviroment
 	{
-		public double SigmaS { get; }
-		public double SigmaA { get; }
-		public double CosFi { get; }
+		public double SigmaS { get; set; }
+		public double SigmaA { get; set; }
+		public double CosFi { get; set; }
 		public int NeutronNums { get; set; }
 
 		private List<Neutron> neutrons = new List<Neutron>();
@@ -22,7 +22,7 @@ namespace NeutronDiffusion
 			this.CosFi = CosFi;
 		}
 
-		public static void Main()
+		public static void Main2()
 		{
 			Enviroment env = new Enviroment(2, 2, 0.1);
 			env.NeutronNums = 2;

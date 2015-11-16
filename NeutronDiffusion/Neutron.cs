@@ -41,9 +41,10 @@ namespace NeutronDiffusion
             var step = CollisionPoint.Count;
             while (!isAbsorbed)
             {
-                SubStep(step++, Rnd(0, 1), CollisionPoint[step - 1]);
+                SubStep(step, Rnd(0, 1), CollisionPoint[step - 1]);
+                step += 1;
             }
-            AverageFreePathLength = AverageFreePathLength/FreePathLength.Count;
+            AverageFreePathLength = AverageFreePathLength/(FreePathLength.Count - 1);
         }
 
         private void SubStep(int step, double gamma, CustomPoint3D startPoint)

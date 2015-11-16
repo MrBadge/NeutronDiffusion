@@ -1,1 +1,9 @@
 Y:\GitHub\NeutronDiffusion\NeutronDiffusion\bin\Debug\NeutronDiffusion.exe.config
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\bin\Debug\NeutronDiffusion.exe
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\bin\Debug\NeutronDiffusion.pdb
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.csprojResolveAssemblyReference.cache
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.Form1.resources
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.Properties.Resources.resources
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.csproj.GenerateResource.Cache
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.exe
+Y:\GitHub\NeutronDiffusion\NeutronDiffusion\obj\Debug\NeutronDiffusion.pdb
