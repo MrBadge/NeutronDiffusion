@@ -22,7 +22,7 @@ namespace NeutronDiffusion
 		    this.SigmaTr = SigmaA + SigmaS*(1 - CosFi);
 		}
 
-		public static void Main()
+		public static void Main2()
 		{
 			Enviroment env = new Enviroment(2, 2, 0.1);
 			env.NeutronNums = 20000;
@@ -37,9 +37,16 @@ namespace NeutronDiffusion
             var threads = new NeutronThreadsWrapper(neutrons);
             threads.LaunchCalculations();
             Console.WriteLine("MeanFreePathBeforeAbsorption: {0}", MeanFreePathBeforeAbsorption());
-		}
+        }
 
-		private double MeanFreePathBeforeAbsorption()
+        public List<CustomPoint3D> SimulateOneNeutron()
+        {
+            Neutron neutron = new Neutron(new CustomPoint3D(), SigmaA, SigmaTr);
+            neutron.Move();
+            return neutron.CollisionPoint;
+        }
+
+        private double MeanFreePathBeforeAbsorption()
 		{
 			return neutrons.Aggregate(
 				0.0,
